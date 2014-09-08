@@ -10,6 +10,8 @@ namespace BlackJack
 
         public Deck(int numberOfDecks)
         {
+            if (numberOfDecks < 1)
+                throw new IndexOutOfRangeException("Atleast one deck has to be created.");
             cards = new List<Card>();
             for (var i = numberOfDecks; i > 0; i--)
             {
@@ -18,7 +20,8 @@ namespace BlackJack
             ShuffleCards();
         }
 
-        private void ShuffleCards()
+
+        public void ShuffleCards()
         {
             Random rng = new Random();
             int n = cards.Count;

@@ -49,12 +49,15 @@ namespace BlackJack
 
         private void AskDealer()
         {
-            string answer = dealer.askForAction();
+            string answer = dealer.AskForAction();
         }
 
         private void AskPlayers()
         {
-            
+            foreach (var player in players)
+            {
+                string answer = player.AskForAction();
+            }
         }
 
         private void DealCards()
