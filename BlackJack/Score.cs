@@ -14,20 +14,20 @@ namespace BlackJack
 
             foreach (var card in hand)
             {
-                if (card.cardValue == 1)
+                if (card.CardValue == 1)
                 {
                     _lowerScore += 1;
                     _higherScore += 11;
                 }
-                else if (card.cardValue >= 10)
+                else if (card.CardValue >= 10)
                 {
                     _lowerScore += 10;
                     _higherScore += 10;
                 }
                 else
                 {
-                    _lowerScore += card.cardValue;
-                    _higherScore += card.cardValue;
+                    _lowerScore += card.CardValue;
+                    _higherScore += card.CardValue;
                 }
             }
 

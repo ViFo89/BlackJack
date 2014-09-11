@@ -17,7 +17,7 @@ namespace BlackJackTest
         [TestMethod]
         public void CreateOneDeck()
         {
-            Deck deck = new Deck(1);
+            var deck = new Deck(1);
             Assert.AreEqual(52, deck.Count());
         }
 
@@ -27,12 +27,7 @@ namespace BlackJackTest
             var deck = new Deck(1);
 
 
-            deck.ShuffleCards();
-
-            for (var i = 0; i < 52; i++)
-            {
-                
-            }
+            
 
         }
 
@@ -40,13 +35,13 @@ namespace BlackJackTest
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void CreateNoDeck()
         {
-            Deck deck = new Deck(0);
+            var deck = new Deck(0);
         }
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void CreateNegativeDeck()
         {
-            Deck deck = new Deck(-1);
+            var deck = new Deck(-1);
         }
     }
 }

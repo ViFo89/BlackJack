@@ -67,11 +67,11 @@ namespace BlackJack
             {
                 card = deck.DealCard();
                 player.GiveCard(card);
-                Console.WriteLine("Player "+player.Name + " got " + card.cardValue);
+                Console.WriteLine("Player "+player.Name + " got " + card.CardValue);
             }
             card = deck.DealCard();
             dealer.GiveCard(card);
-            Console.WriteLine("Dealer got " + card.cardValue);
+            Console.WriteLine("Dealer got " + card.CardValue);
         }
     }
 }

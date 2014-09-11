@@ -41,7 +41,7 @@ namespace BlackJack
             {
                 for (var j = 1; j <= 13; j++)
                 {
-                    cards.Add(new Card(j));
+                    cards.Add(new Card(i, j));
                 } 
             }
         }
