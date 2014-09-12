@@ -20,15 +20,21 @@ namespace BlackJackTest
             var deck = new Deck(1);
             Assert.AreEqual(52, deck.Count());
         }
-
         [TestMethod]
-        public void TestShuffle()
+        public void DealCards()
         {
             var deck = new Deck(1);
+            var card = deck.DealCard();
 
+            Assert.AreEqual(51, deck.Count(), "There is not 51 cards in the deck!");
+            Assert.AreEqual(13, card.CardValue, "The card that got dealt was not a 13");
+            Assert.AreEqual(Colors.Hearts, card.CardColor, "The card that got dealt was not a Hearts");
 
-            
+            card = deck.DealCard();
 
+            Assert.AreEqual(50, deck.Count(), "There is not 50 cards in the deck!");
+            Assert.AreEqual(12, card.CardValue, "The card that got dealt was not a 12");
+            Assert.AreEqual(Colors.Hearts, card.CardColor, "The card that got dealt was not a Hearts");
         }
 
         [TestMethod]

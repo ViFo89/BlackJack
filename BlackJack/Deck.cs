@@ -17,7 +17,6 @@ namespace BlackJack
             {
                 CreateDeck();
             }
-            ShuffleCards();
         }
 
 
@@ -28,10 +27,10 @@ namespace BlackJack
             while (n > 1)
             {
                 n--;
-                int k = rng.Next(n + 1);
-                Card value = cards[k];
-                cards[k] = cards[n];
-                cards[n] = value;
+                var randomNumber = rng.Next(n + 1);
+                var card = cards[randomNumber];
+                cards[randomNumber] = cards[n];
+                cards[n] = card;
             }  
         }
 
