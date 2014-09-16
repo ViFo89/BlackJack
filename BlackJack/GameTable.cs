@@ -26,6 +26,7 @@ namespace BlackJack
         {
             dealer = new Dealer();
             deck = new Deck(numOfDecks);
+            deck.ShuffleCards();
         }
 
         public void AddPlayer(Player player)
@@ -35,24 +36,26 @@ namespace BlackJack
 
         public void StartGame()
         {
-            bool isRunning = players.Count >= 0;
+            bool isRunning = true;
 
             while (isRunning)
             {
+
+
                 DealCards();
-                AskPlayers();
-                AskDealer();
+                AskPlayersForAction();
+                AskDealerForAction();
 
                 isRunning = false;
             }
         }
 
-        private void AskDealer()
+        private void AskDealerForAction()
         {
             string answer = dealer.AskForAction();
         }
 
-        private void AskPlayers()
+        private void AskPlayersForAction()
         {
             foreach (var player in players)
             {
@@ -67,11 +70,11 @@ namespace BlackJack
             {
                 card = deck.DealCard();
                 player.GiveCard(card);
-                Console.WriteLine("Player "+player.Name + " got " + card.CardValue);
+                Console.WriteLine("Player " + player.Name + " got " + card.CardColor+ " " + card.CardValue);
             }
             card = deck.DealCard();
             dealer.GiveCard(card);
-            Console.WriteLine("Dealer got " + card.CardValue);
+            Console.WriteLine("Dealer got " + card.CardColor + " " + card.CardValue);
         }
     }
 }

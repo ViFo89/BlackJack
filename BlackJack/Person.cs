@@ -2,21 +2,21 @@
 
 namespace BlackJack
 {
-    public class Person
+    public abstract class Person
     {
-        private List<Card> hand;
-        private Score score;
-        private static int counter = 0;
+        protected Hand hand;
+        protected Score score;
+        protected static int counter = 0;
 
-        private int _name;
+        protected int _name;
         
             public int Name{
             get { return _name; }
         }
 
-        public Person()
+        protected Person()
         {
-            hand = new List<Card>();
+            hand = new Hand();
             score = new Score();
             _name = ++counter;
         }
@@ -32,10 +32,7 @@ namespace BlackJack
             return score.IsBust();
         }
 
-        public string AskForAction()
-        {
-            return null;
-        }
+        public abstract string AskForAction();
 
     }
 }

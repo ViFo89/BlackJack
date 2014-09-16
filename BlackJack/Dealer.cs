@@ -8,9 +8,14 @@ namespace BlackJack
 {
     public class Dealer : Person
     {
-
-
-
-
+        public Dealer():base()
+        {
+        }
+       
+        public override string AskForAction()
+        {
+            int[] currentScore = score.CalculateScore(hand);
+            return score.HigherScore < 17 ? "hit" : "stay";
+        }
     }
 }
